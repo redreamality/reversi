@@ -1,0 +1,91 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>About Reversi – This Site and the Game Engine</title>
+<meta name="description" content="About the Reversi website: a quiet place to play Reversi in the browser, built on the open-source UCThello engine by Oliver Merkel (MIT License).">
+<link rel="canonical" href="https://redreamality.com/reversi/about.html">
+<link rel="icon" href="./favicon.svg" type="image/svg+xml">
+<meta name="theme-color" content="#1d4a37">
+<meta name="page-type" content="other">
+<link rel="stylesheet" href="./css/site.css">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[
+ {"@type":"ListItem","position":1,"name":"Reversi","item":"https://redreamality.com/reversi/"},
+ {"@type":"ListItem","position":2,"name":"About","item":"https://redreamality.com/reversi/about.html"}]}
+</script>
+<!-- analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-4WM6C44V4Z"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag("js",new Date());gtag("config","G-4WM6C44V4Z");window.trackEvent=function(n){gtag("event",n,{site:"reversi"})};</script>
+<!-- /analytics -->
+</head>
+<body>
+<header class="topbar">
+  <div class="topbar-inner">
+    <a class="brand" href="./" aria-label="Reversi home">
+      <svg viewBox="0 0 32 32" aria-hidden="true"><rect width="32" height="32" rx="7" fill="#1d4a37"/><circle cx="16" cy="16" r="10" fill="#1b1b1a"/><path d="M16 6a10 10 0 0 1 0 20z" fill="#f6f3ea"/></svg>
+      Reversi
+    </a>
+    <nav class="topnav" aria-label="Main">
+      <a href="./">Play Reversi</a>
+    </nav>
+  </div>
+</header>
+<main class="page">
+<h1>About Reversi</h1>
+<p>This website is a simple, quiet place to play Reversi in the browser, either against the computer or with a friend on the same screen. There are no accounts and nothing to install. Pages load the game only when you press Play.</p>
+<h2>Game engine</h2>
+<p><strong>Game engine: UCThello by Oliver Merkel, MIT License.</strong> The rules engine and the AI, which uses Monte Carlo tree search (UCT), come from the open-source project <a href="https://github.com/OMerkel/UCThello" rel="noopener">UCThello</a>. We did not write the engine; we built the board, the page design and the text around it. The board graphics, cover, icons and screenshots on this site were made for this site and are not taken from the UCThello project.</p>
+<p>The full license text is below and also available as a <a href="./licenses/UCThello-LICENSE.txt">plain text file</a>.</p>
+<pre># License
+
+Logos, brands, and trademarks belong to their respective owners.
+
+All source code also including code parts written in HMTL, Javascript, CSS is under MIT License.
+
+The MIT License (MIT)
+
+  Copyright (c) 2016-2026 Oliver Merkel
+
+  Permission is hereby granted, free of charge, to any person obtaining a copy of
+  this software and associated documentation files (the "Software"), to deal in
+  the Software without restriction, including without limitation the rights to
+  use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of
+  the Software, and to permit persons to whom the Software is furnished to do so,
+  subject to the following conditions:
+
+  The above copyright notice and this permission notice shall be included in all
+  copies or substantial portions of the Software.
+
+  THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+  IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS
+  FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR
+  COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER
+  IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN
+  CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+
+If not otherwise stated all game graphics (independent of its format) are licensed under
+
+  Creative Commons License: Images are licensed under a
+  Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License.
+  
+  * http://creativecommons.org/licenses/by-nc-sa/4.0</pre>
+<h2>Contact</h2>
+<p>Questions or bug reports: <a href="https://github.com/redreamality/reversi/issues" rel="noopener">GitHub Issues</a>, or see the <a href="./contact.html">Contact page</a>.</p>
+</main>
+<footer class="site-footer">
+  <div class="inner">
+    <a class="brand" href="./">Reversi</a>
+    <nav aria-label="Site">
+      <a href="./about.html">About</a>
+      <a href="./contact.html">Contact</a>
+      <a href="./privacy.html">Privacy Policy</a>
+      <a href="./terms.html">Terms of Service</a>
+      <a href="./dmca.html">Copyright / DMCA</a>
+    </nav>
+    <p class="fine">© 2026 Reversi. Game engine: UCThello by Oliver Merkel, MIT License (<a href="./licenses/UCThello-LICENSE.txt">license</a>).</p>
+  </div>
+</footer>
+</body>
+</html>
