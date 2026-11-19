@@ -888,3 +888,65 @@ h3 {
 	max-width: 360px;
 	margin: 0 auto;
 }
+
+/* ---------- article pages (strategy guide) ---------- */
+.crumbs {
+	font-size: 0.9rem;
+	color: var(--ink-soft);
+	margin-top: 0.4rem;
+}
+
+.crumbs a {
+	color: var(--ink-soft);
+}
+
+.page.article .lead {
+	font-size: 1.1rem;
+}
+
+.shot.diagram img {
+	box-shadow: none;
+	border-radius: 0;
+}
+
+.shot.diagram.narrow img {
+	max-width: 360px;
+	margin: 0 auto;
+}
+
+.principles li {
+	margin: 0.25rem 0;
+}
+
+.topnav a[aria-current="page"] {
+	color: var(--ink);
+	font-weight: 600;
+}
+
+.cta {
+	margin-top: 2.4rem;
+	padding: 1.2rem 1.3rem 1.4rem;
+	background: #e8efe9;
+	border-radius: var(--radius);
+}
+
+.cta h2 {
+	margin-top: 0.2rem;
+}
+
+.btn-cta {
+	display: inline-flex;
+	align-items: center;
+	min-height: 48px;
+	padding: 0 1.4rem;
+	border-radius: 999px;
+	background: var(--felt);
+	color: #f6f3ea;
+	font: 600 1.05rem/1 var(--serif);
+	text-decoration: none;
+}
+
+.btn-cta:hover {
+	background: var(--felt-dark);
+	color: #fff;
+}

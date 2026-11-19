@@ -1,0 +1,286 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Reversi Strategy: How to Win at Reversi, With Diagrams</title>
+<meta name="description" content="Reversi strategy that holds up: take corners, avoid X- and C-squares, flip fewer discs early and keep more moves than your opponent. Diagrams for each idea.">
+<meta name="target-keyword" content="reversi strategy">
+<link rel="canonical" href="https://redreamality.com/reversi/strategy.html">
+<link rel="icon" href="./favicon.svg" type="image/svg+xml">
+<meta name="theme-color" content="#1d4a37">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Reversi">
+<meta property="og:title" content="Reversi Strategy: How to Win at Reversi">
+<meta property="og:description" content="Corners, X- and C-squares, mobility, edges, quiet moves and parity, each explained with a board diagram.">
+<meta property="og:url" content="https://redreamality.com/reversi/strategy.html">
+<meta property="og:image" content="https://redreamality.com/reversi/img/reversi-midgame.png">
+<link rel="stylesheet" href="./css/site.css">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Article",
+      "@id": "https://redreamality.com/reversi/strategy.html#article",
+      "headline": "Reversi Strategy: How to Win at Reversi",
+      "description": "Corners, X- and C-squares, mobility, edges, frontier discs, quiet moves, endgame parity and a beginner opening, each explained with a board diagram.",
+      "url": "https://redreamality.com/reversi/strategy.html",
+      "mainEntityOfPage": "https://redreamality.com/reversi/strategy.html",
+      "image": "https://redreamality.com/reversi/img/reversi-midgame.png",
+      "datePublished": "2026-11-19",
+      "dateModified": "2026-11-19",
+      "inLanguage": "en",
+      "author": {"@type": "Organization", "name": "Reversi", "url": "https://redreamality.com/reversi/"},
+      "publisher": {"@type": "Organization", "name": "Reversi", "url": "https://redreamality.com/reversi/"},
+      "about": {"@id": "https://redreamality.com/reversi/#game"}
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {"@type": "ListItem", "position": 1, "name": "Reversi", "item": "https://redreamality.com/reversi/"},
+        {"@type": "ListItem", "position": 2, "name": "Reversi Strategy", "item": "https://redreamality.com/reversi/strategy.html"}
+      ]
+    }
+  ]
+}
+</script>
+<!-- faq-jsonld -->
+<script type="application/ld+json">
+{
+ "@context": "https://schema.org",
+ "@type": "FAQPage",
+ "mainEntity": [
+  {
+   "@type": "Question",
+   "name": "How do you win at Reversi?",
+   "acceptedAnswer": {
+    "@type": "Answer",
+    "text": "You win at Reversi by having more discs than your opponent when neither side can move, but you get there by controlling where the game can go, not by grabbing discs. Strong players follow a handful of principles, and almost every tip and trick you will read about Reversi strategy is one of these:"
+   }
+  },
+  {
+   "@type": "Question",
+   "name": "Why are corners so important?",
+   "acceptedAnswer": {
+    "@type": "Answer",
+    "text": "A disc in a corner can never be flipped, because there is no square beyond it from which to trap it. That makes corners the safest squares on the board, and they spread their safety: an unbroken line of your discs running along the edge from your corner can never be flipped either. Discs that can no longer be flipped are called stable discs, and the endgame is largely a race to collect them."
+   }
+  },
+  {
+   "@type": "Question",
+   "name": "What are X-squares and C-squares, and why avoid them?",
+   "acceptedAnswer": {
+    "@type": "Answer",
+    "text": "X-squares are the four squares diagonally next to a corner (b2, g2, b7, g7), and C-squares are the eight edge squares directly beside a corner (such as b1 and a2). Playing on one of them while that corner is still empty often gives your opponent a way into the corner, so a sound Reversi strategy keeps off them until the corner is settled or there is no reasonable alternative."
+   }
+  },
+  {
+   "@type": "Question",
+   "name": "Why can flipping fewer discs be better?",
+   "acceptedAnswer": {
+    "@type": "Answer",
+    "text": "Flipping fewer discs early is often better because it keeps your opponent short of moves. Mobility is the number of legal moves a player has. Each disc you flip is one more disc your opponent can use to bracket a line, so big captures in the opening and middle game tend to hand the other side more choices. A player who runs low on choices is eventually forced to play an X-square, a C-square or a weak edge move."
+   }
+  },
+  {
+   "@type": "Question",
+   "name": "Are edges good or bad?",
+   "acceptedAnswer": {
+    "@type": "Answer",
+    "text": "Edges are neither good nor bad on their own. An edge disc can only be flipped along the edge, which makes it harder to attack than a disc in the middle, but edge moves also use up safe moves and can open a path to a corner. The question to ask before every edge move is what it allows your opponent to do next."
+   }
+  },
+  {
+   "@type": "Question",
+   "name": "What are frontier discs and quiet moves?",
+   "acceptedAnswer": {
+    "@type": "Answer",
+    "text": "Frontier discs are discs that touch at least one empty square, and a quiet move is a move that flips discs without adding to your frontier. Your opponent can only play next to your frontier discs, so fewer frontier discs means fewer moves for them. Discs packed in the middle of a group, with no empty neighbours, are invisible to your opponent for now. Of all the parts of Reversi strategy, this is the one beginners notice last."
+   }
+  },
+  {
+   "@type": "Question",
+   "name": "What is parity in the endgame?",
+   "acceptedAnswer": {
+    "@type": "Answer",
+    "text": "Parity is the idea that, late in the game, it pays to make the last move in each separate region of empty squares, because the last move in a region cannot be answered there. Without passes, players alternate inside a region, so if a region has an odd number of empty squares, the player who moves into it first can expect to move into it last as well. The usual rule of thumb is therefore to play into regions with an odd number of empty squares and leave the even ones alone."
+   }
+  },
+  {
+   "@type": "Question",
+   "name": "How do I beat the computer on this site?",
+   "acceptedAnswer": {
+    "@type": "Answer",
+    "text": "Play the principles above patiently and let the computer run out of good moves. Our AI has one fixed strength; there are no difficulty levels to choose from. It picks each move with a Monte Carlo tree search: it plays out many random games from the current position for up to about eight seconds and chooses the move that did best."
+   }
+  },
+  {
+   "@type": "Question",
+   "name": "What's a good opening for beginners?",
+   "acceptedAnswer": {
+    "@type": "Answer",
+    "text": "For beginners, a good opening is a quiet one: stay in the central 4×4 area, flip one or two discs at a time, and don't be the first player to move out towards the edges. Black's four possible first moves are all equivalent by symmetry, so the real choices start with White's reply."
+   }
+  }
+ ]
+}
+</script>
+<!-- /faq-jsonld -->
+<!-- analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-4WM6C44V4Z"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag("js",new Date());gtag("config","G-4WM6C44V4Z");window.trackEvent=function(n){gtag("event",n,{site:"reversi"})};</script>
+<!-- /analytics -->
+</head>
+<body>
+<header class="topbar">
+  <div class="topbar-inner">
+    <a class="brand" href="./" aria-label="Reversi home">
+      <svg viewBox="0 0 32 32" aria-hidden="true"><rect width="32" height="32" rx="7" fill="#1d4a37"/><circle cx="16" cy="16" r="10" fill="#1b1b1a"/><path d="M16 6a10 10 0 0 1 0 20z" fill="#f6f3ea"/></svg>
+      Reversi
+    </a>
+    <nav class="topnav" aria-label="Main">
+      <a href="./">Play Reversi</a>
+      <a href="./strategy.html" aria-current="page">Strategy</a>
+    </nav>
+  </div>
+</header>
+<main class="page article">
+<nav class="crumbs" aria-label="Breadcrumb"><a href="./">Reversi</a> <span aria-hidden="true">›</span> Strategy</nav>
+<h1>Reversi Strategy: How to Win at Reversi</h1>
+<p class="lead">The core Reversi strategy fits in one sentence: take the corners, don't play next to an empty corner, and flip few discs early so that you keep more legal moves than your opponent. Disc count only matters at the very end. Below, each idea gets its own short section and a board diagram, in roughly the order you will need them during a game.</p>
+<p>The diagrams use the same names as our board: columns <strong>a</strong> to <strong>h</strong> from left to right, rows <strong>1</strong> to <strong>8</strong> from top to bottom. Every position shown comes from a real sequence of legal moves from the normal starting position, so you could reach it in a game. A gold ring marks a good move, a red ring marks a risky or bad one.</p>
+
+<section aria-labelledby="q-win">
+<h2 id="q-win">How do you win at Reversi?</h2>
+<p>You win at Reversi by having more discs than your opponent when neither side can move, but you get there by controlling where the game can go, not by grabbing discs. Strong players follow a handful of principles, and almost every tip and trick you will read about Reversi strategy is one of these:</p>
+<ol class="principles">
+  <li><a href="#q-corners">Take corners</a>: a corner disc can never be flipped.</li>
+  <li><a href="#q-xc">Avoid X-squares and C-squares</a> while the corner next to them is empty.</li>
+  <li><a href="#q-mobility">Flip fewer discs early</a> and keep your number of legal moves high.</li>
+  <li><a href="#q-edges">Treat edges with care</a>: they can be solid or they can hand over a corner.</li>
+  <li><a href="#q-frontier">Keep few frontier discs</a> and look for quiet moves.</li>
+  <li><a href="#q-parity">Count empty squares in the endgame</a> and try to make the last move in each region.</li>
+</ol>
+<p>None of these wins every game on its own, and there is no trick that lets you always win at Reversi. Together, though, they explain why one player ends up with all the good moves and the other is forced into bad ones.</p>
+</section>
+
+<section aria-labelledby="q-corners">
+<h2 id="q-corners">Why are corners so important?</h2>
+<p>A disc in a corner can never be flipped, because there is no square beyond it from which to trap it. That makes corners the safest squares on the board, and they spread their safety: an unbroken line of your discs running along the edge from your corner can never be flipped either. Discs that can no longer be flipped are called <em>stable discs</em>, and the endgame is largely a race to collect them.</p>
+<figure class="shot diagram">
+  <img src="img/strategy/corner.svg" width="716" height="366" loading="lazy" alt="Two Reversi boards. Left: Black to move, with the h8 corner empty and white discs on c8 to g8 next to a black disc on b8; h8 is ringed in gold. Right: after Black plays h8 the whole bottom row from b8 to h8 is black, shaded to show that those seven discs are stable.">
+  <figcaption>Black plays the h8 corner and flips five white discs along the bottom edge. The seven black discs from b8 to h8 now run unbroken from the corner, so none of them can ever be flipped again.</figcaption>
+</figure>
+<p>Corners rarely come free. You usually get one because your opponent was forced to play next to it, which is what the next section is about. When you do take a corner, build out from it along the edges; each disc you add that touches your stable group is one your opponent can no longer win back.</p>
+</section>
+
+<section aria-labelledby="q-xc">
+<h2 id="q-xc">What are X-squares and C-squares, and why avoid them?</h2>
+<p>X-squares are the four squares diagonally next to a corner (b2, g2, b7, g7), and C-squares are the eight edge squares directly beside a corner (such as b1 and a2). Playing on one of them while that corner is still empty often gives your opponent a way into the corner, so a sound Reversi strategy keeps off them until the corner is settled or there is no reasonable alternative.</p>
+<figure class="shot diagram narrow">
+  <img src="img/strategy/xc-map.svg" width="350" height="350" loading="lazy" alt="An empty Reversi board with the four corners marked with a star, the four X-squares b2, g2, b7 and g7 marked X, and the eight C-squares beside the corners marked C.">
+  <figcaption>The four corners (★), the four X-squares (X) and the eight C-squares (C).</figcaption>
+</figure>
+<p>An X-square is usually the worse of the two. A disc there sits on the long diagonal, so any of your opponent's discs further along that diagonal can trap it from the corner. In the position below White has just played b7, and Black can answer at once in the a8 corner.</p>
+<figure class="shot diagram">
+  <img src="img/strategy/x-square.svg" width="716" height="366" loading="lazy" alt="Two Reversi boards. Left: White has just placed a disc on the X-square b7, ringed in red, and the a8 corner beside it is empty and ringed in gold. Right: Black has played a8 and the white disc on b7 has turned black.">
+  <figcaption>White's move to the X-square b7 lets Black take the a8 corner straight away, flipping three discs, including the one on b7.</figcaption>
+</figure>
+<p>C-squares are less dangerous but follow the same logic along the edge; there is an example in the section on edges. Late in the game, once a corner is already taken, its X- and C-squares lose their risk and can be perfectly good moves.</p>
+</section>
+
+<section aria-labelledby="q-mobility">
+<h2 id="q-mobility">Why can flipping fewer discs be better?</h2>
+<p>Flipping fewer discs early is often better because it keeps your opponent short of moves. <em>Mobility</em> is the number of legal moves a player has. Each disc you flip is one more disc your opponent can use to bracket a line, so big captures in the opening and middle game tend to hand the other side more choices. A player who runs low on choices is eventually forced to play an X-square, a C-square or a weak edge move.</p>
+<figure class="shot diagram narrow">
+  <img src="img/strategy/mobility.svg" width="350" height="350" loading="lazy" alt="A Reversi middle-game position with Black to move. Square c3 is marked A with a red ring and square g6 is marked B with a gold ring.">
+  <figcaption>Black to move. Move A (c3) flips four discs and leaves White 14 legal replies. Move B (g6) flips only one disc and leaves White 10.</figcaption>
+</figure>
+<p>Move A looks more attractive because it wins more discs right now, yet it gives White four extra options. Over a whole game that difference adds up: the player with more moves gets to wait, while the player with fewer moves has to choose between bad squares. This is the reason the best strategy for Reversi feels backwards at first. Count discs at the end; in the opening and middle game, count moves.</p>
+</section>
+
+<section aria-labelledby="q-edges">
+<h2 id="q-edges">Are edges good or bad?</h2>
+<p>Edges are neither good nor bad on their own. An edge disc can only be flipped along the edge, which makes it harder to attack than a disc in the middle, but edge moves also use up safe moves and can open a path to a corner. The question to ask before every edge move is what it allows your opponent to do next.</p>
+<figure class="shot diagram">
+  <img src="img/strategy/edge.svg" width="716" height="366" loading="lazy" alt="Two Reversi boards. Left: Black has just played the C-square h2, ringed in red, with the h1 corner above it empty and ringed in gold. Right: White has taken h1 and the black disc on h2 has turned white.">
+  <figcaption>Black's edge move to the C-square h2 leaves White a legal move in the empty h1 corner. White takes it and flips three discs, h2 among them.</figcaption>
+</figure>
+<p>Edges become strong when they cannot be attacked: a full edge, or an edge built out from your own corner. They become weak when they leave a single empty square that your opponent can fill to bracket your discs, or when they sit next to an empty corner as in the example. If you are unsure, a quiet move in the middle is usually the safer choice. Good Reversi strategy treats an edge as something to build, not something to grab.</p>
+</section>
+
+<section aria-labelledby="q-frontier">
+<h2 id="q-frontier">What are frontier discs and quiet moves?</h2>
+<p>Frontier discs are discs that touch at least one empty square, and a quiet move is a move that flips discs without adding to your frontier. Your opponent can only play next to your frontier discs, so fewer frontier discs means fewer moves for them. Discs packed in the middle of a group, with no empty neighbours, are invisible to your opponent for now. Of all the parts of Reversi strategy, this is the one beginners notice last.</p>
+<figure class="shot diagram narrow">
+  <img src="img/strategy/quiet.svg" width="350" height="350" loading="lazy" alt="A Reversi position with Black to move. Square e3 is marked Q with a gold ring and square b6 is marked L with a red ring.">
+  <figcaption>Black to move. Both Q (e3) and L (b6) flip a single disc. Q flips e4, which has no empty neighbours, and leaves White 8 legal moves. L leaves White 15.</figcaption>
+</figure>
+<p>The two moves capture the same number of discs, so the difference is purely about shape. Q turns a disc that was already surrounded, giving White almost nothing new to aim at. L flips a disc on the outside of the group and opens fresh targets. When you have several moves that look alike, prefer the one that touches the fewest empty squares; this single habit is one of the most useful Reversi tips for moving from beginner to intermediate play.</p>
+</section>
+
+<section aria-labelledby="q-parity">
+<h2 id="q-parity">What is parity in the endgame?</h2>
+<p>Parity is the idea that, late in the game, it pays to make the last move in each separate region of empty squares, because the last move in a region cannot be answered there. Without passes, players alternate inside a region, so if a region has an odd number of empty squares, the player who moves into it first can expect to move into it last as well. The usual rule of thumb is therefore to play into regions with an odd number of empty squares and leave the even ones alone.</p>
+<figure class="shot diagram narrow">
+  <img src="img/strategy/parity.svg" width="350" height="350" loading="lazy" alt="A Reversi endgame position with Black to move and five empty squares. The three empty squares a1, a2 and a3 on the left edge are shaded gold and ringed; the two empty squares g1 and h2 in the top-right corner area are shaded blue.">
+  <figcaption>Black to move with five empty squares in two regions: three on the left edge (a1 to a3, gold) and two at the top right (g1 and h2, blue). Black has legal moves in both. Parity points to the odd, three-square region.</figcaption>
+</figure>
+<p>Parity is a guideline, not a law. Passes change the count, and a region where one player has no legal moves behaves differently, so in the last ten or so moves it is worth actually reading out the possibilities. With only a few empty squares left, counting every line is realistic, and it is the most reliable way to turn a close Reversi game into a win.</p>
+</section>
+
+<section aria-labelledby="q-ai">
+<h2 id="q-ai">How do I beat the computer on this site?</h2>
+<p>Play the principles above patiently and let the computer run out of good moves. Our AI has one fixed strength; there are no difficulty levels to choose from. It picks each move with a Monte Carlo tree search: it plays out many random games from the current position for up to about eight seconds and chooses the move that did best.</p>
+<ul>
+  <li>Keep the legal-move dots on while you learn (they are under <em>Options</em>). Before each move, count how many of those dots your move would leave the AI.</li>
+  <li>Stay off X-squares and C-squares next to empty corners, even when a move there flips a lot.</li>
+  <li>When the AI takes a corner, don't panic. Avoid feeding it the edge next to that corner and look for the corners it has not reached yet.</li>
+  <li>From about twelve empty squares onward, slow down and count regions for parity.</li>
+</ul>
+<p>Games are not saved, so if you want to try an idea again, start a new game and aim for the same kind of position.</p>
+</section>
+
+<section aria-labelledby="q-opening">
+<h2 id="q-opening">What's a good opening for beginners?</h2>
+<p>For beginners, a good opening is a quiet one: stay in the central 4×4 area, flip one or two discs at a time, and don't be the first player to move out towards the edges. Black's four possible first moves are all equivalent by symmetry, so the real choices start with White's reply.</p>
+<figure class="shot diagram narrow">
+  <img src="img/strategy/opening.svg" width="350" height="350" loading="lazy" alt="The Reversi board after Black's first move f5. White's three legal replies are ringed and numbered: 1 on d6, 2 on f6 and 3 on f4.">
+  <figcaption>After Black opens with f5, White has exactly three legal replies: d6 (1, the perpendicular opening), f6 (2, the diagonal opening) and f4 (3, the parallel opening).</figcaption>
+</figure>
+<p>You don't need to memorise opening lines to play well. Keeping your moves inside the centre and your disc count modest will carry you through the first ten moves; from there the middle-game principles take over.</p>
+</section>
+
+<section aria-labelledby="checklist">
+<h2 id="checklist">A Reversi strategy checklist for every move</h2>
+<ol>
+  <li>Can I take a corner? If so, it is usually right.</li>
+  <li>Does my move go next to an empty corner? If so, look for something else.</li>
+  <li>How many legal moves will my opponent have afterwards? Fewer is better.</li>
+  <li>Does it flip discs on the outside of a group? Prefer moves that flip surrounded discs.</li>
+  <li>In the endgame: which regions have an odd number of empty squares?</li>
+</ol>
+</section>
+
+<section class="cta" aria-labelledby="play-now">
+<h2 id="play-now">Try this Reversi strategy against the AI</h2>
+<p>The fastest way to make these ideas stick is to use them in a real game. You play Black, the computer plays White, and the legal-move dots show your options.</p>
+<p><a class="btn-cta" href="./">Play Reversi against the AI</a></p>
+</section>
+</main>
+<footer class="site-footer">
+  <div class="inner">
+    <a class="brand" href="./">Reversi</a>
+    <nav aria-label="Site">
+      <a href="./about.html">About</a>
+      <a href="./contact.html">Contact</a>
+      <a href="./privacy.html">Privacy Policy</a>
+      <a href="./terms.html">Terms of Service</a>
+      <a href="./dmca.html">Copyright / DMCA</a>
+    </nav>
+    <p class="fine">© 2026 Reversi. Game engine: UCThello by Oliver Merkel, MIT License (<a href="./licenses/UCThello-LICENSE.txt">license</a>).</p>
+  </div>
+</footer>
+</body>
+</html>

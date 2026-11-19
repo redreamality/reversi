@@ -126,3 +126,9 @@ UCThello 仓库 `img/` 下的图片是 CC BY-NC-SA（禁止商用），**本站�
 uv run tools/audit_site.py site --keyword "reversi"
 cd e2e && pnpm exec playwright test
 ```
+
+## 内页：Reversi Strategy（`strategy.html`）
+
+- 目标词写在页面的 `<meta name="target-keyword" content="reversi strategy">` 里，`tools/audit_site.py` 按它检查 H1 和密度（首页仍用 `--keyword`）。"reversi strategy" 是两个词的短语，密度目前 0.85%，audit 会报 warn。按要求不硬塞：要到 3% 得在 1900 词里重复约 28 次。
+- 棋盘示意图是 `tools/strategy_diagrams.py` 生成的 `img/strategy/*.svg`。每个局面都从开局按记录下来的合法着法走出来（着法和图注用到的数字在 `tools/strategy_diagrams.json`），e2e 会用站上的 `js/engine/board.js` 把每串着法重放一遍，核对局面。改了生成器以后要同步检查图注里的格子名和数字。
+- FAQPage 结构化数据由 `uv run tools/faq_jsonld.py site/strategy.html` 从页面上的问句小标题（以 `?` 结尾的 h2）和它下面第一段生成。改了这些段落要重跑，e2e 会核对两边一致。
