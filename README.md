@@ -1,13 +1,13 @@
 # Reversi 站点（site/）
 
-纯静态站点，没有构建步骤。现在的部署目标是 GitHub Pages 项目页 **https://redreamality.com/reversi/**（子路径 `/reversi/`）。用户站 `redreamality.github.io` 绑了自定义域名 `redreamality.com`，所以 `redreamality.github.io/reversi/` 会 301 跳到这里；canonical 等网址一律写 `redreamality.com`。把 `site/` 里的全部内容（包括 `.nojekyll`）放到 `redreamality/reversi` 仓库的发布目录即可。这个 README 不需要部署（放上去也没有影响）。
+纯静态站点，没有构建步骤。现在的部署目标是 GitHub Pages 项目页 **https://redreamality.com/reversi/**（子路径 `/reversi/`）。站长的 GitHub 用户站绑了自定义域名 `redreamality.com`，GitHub 默认分配的地址会 301 跳到这里；canonical 等网址一律写 `redreamality.com`。把 `site/` 里的全部内容（包括 `.nojekyll`）放到 `redreamality/reversi` 仓库的发布目录即可。这个 README 不需要部署（放上去也没有影响）。
 
 ## 部署到 GitHub Pages（子路径）要注意的事
 
 - **所有站内链接都是相对路径**（`./css/site.css`、首页是 `./`），JS 里的动态 import 和 Worker 用的是 `new URL(..., import.meta.url)`，所以在 `/reversi/` 下和以后换到域名根目录都能用。**不要再写 `href="/..."`**：在项目页上它会指到 `redreamality.com/` 根目录（那是用户站），整站 404。`tools/audit_site.py` 会根据首页 canonical 识别出子路径，把这种链接报成 `broken-link`。
 - **404.html**：GitHub Pages 遇到任何不存在的路径（比如 `/reversi/a/b/c`）都会返回仓库里的 `404.html`。页面里相对链接的起点会变，所以 `404.html` 的 `<head>` 里有一行 `<base href="/reversi/">`。这一行由 `tools/apply_config.py` 根据 `base_url` 生成，不要手改。
 - **`.nojekyll`**：空文件，让 GitHub Pages 跳过 Jekyll 处理，原样发布所有文件。
-- **robots.txt 和 sitemap**：搜索引擎只读域名根目录的 `robots.txt`（`https://redreamality.com/robots.txt`，由用户站仓库 `redreamality.github.io` 提供），**不会读 `/reversi/robots.txt`**。这个文件留着没有坏处，但里面的 `Sitemap:` 行不会生效。上线后请站长：① 在 Google Search Console（以及 Bing Webmaster Tools）里用已有的 `redreamality.com` 域名资源，或者新建网址前缀资源 `https://redreamality.com/reversi/`，手动提交 `https://redreamality.com/reversi/sitemap.xml`；② 可选：在用户站仓库的根 `robots.txt` 里加一行 `Sitemap: https://redreamality.com/reversi/sitemap.xml`，并确认那份 robots.txt 没有 `Disallow` 掉 `/reversi/`。
+- **robots.txt 和 sitemap**：搜索引擎只读域名根目录的 `robots.txt`（`https://redreamality.com/robots.txt`，由站长的用户站（主页）仓库提供），**不会读 `/reversi/robots.txt`**。这个文件留着没有坏处，但里面的 `Sitemap:` 行不会生效。上线后请站长：① 在 Google Search Console（以及 Bing Webmaster Tools）里用已有的 `redreamality.com` 域名资源，或者新建网址前缀资源 `https://redreamality.com/reversi/`，手动提交 `https://redreamality.com/reversi/sitemap.xml`；② 可选：在用户站仓库的根 `robots.txt` 里加一行 `Sitemap: https://redreamality.com/reversi/sitemap.xml`，并确认那份 robots.txt 没有 `Disallow` 掉 `/reversi/`。
 
 ## 站点配置 `site.config.json`（项目根目录）
 
@@ -27,7 +27,7 @@ uv run tools/set_domain.py --base-url https://playreversi.com                # �
 uv run tools/set_domain.py --contact-url https://github.com/you/repo/issues
 ```
 
-改了 `commentsEnabled` 或 `analyticsSnippet` 之后运行 `uv run tools/apply_config.py` 让它生效。
+改了 `commentsEnabled` 或 `analyticsSnippet` 之后运行 `uv run tools/apply_config.py` 让它生效。`analyticsSnippet` 非空时，隐私政策的 "Visit statistics" 段自动换成 Google Analytics 4 的说明（`tools/partials/privacy-analytics-on.html`），为空时换成"目前不用统计"（`-off.html`）。换别家统计服务时记得改 `-on` 片段。
 
 替换后还要做：`sitemap.xml` 里的 `<lastmod>` 改成发布日期；隐私政策和服务条款里的 "Last updated" 日期按实际情况调整。
 
