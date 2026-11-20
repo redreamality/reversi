@@ -950,3 +950,82 @@ h3 {
 	background: var(--felt-dark);
 	color: #fff;
 }
+
+/* before/after diagrams: <picture> swaps in a stacked SVG on phones */
+.shot picture {
+	display: block;
+}
+
+/* ---------- rules page: printable one-page sheet ---------- */
+.sheet {
+	margin-top: 2.4rem;
+	padding: 1.1rem 1.3rem 1.2rem;
+	border: 2px solid var(--felt);
+	border-radius: var(--radius);
+	background: #fbf8f1;
+}
+
+.sheet h2 {
+	margin-top: 0.2rem;
+}
+
+.sheet-body {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 1rem 1.4rem;
+	align-items: flex-start;
+}
+
+.sheet-body ol {
+	flex: 1 1 260px;
+	margin: 0;
+	padding-left: 1.3rem;
+}
+
+.sheet-body li {
+	margin: 0.3rem 0;
+}
+
+.sheet-board {
+	display: block;
+	flex: 0 1 220px;
+	width: 220px;
+	max-width: 100%;
+	height: auto;
+}
+
+.sheet-note,
+.sheet-url {
+	font-size: 0.9rem;
+	color: var(--ink-soft);
+}
+
+.print-btn {
+	border: 0;
+	cursor: pointer;
+}
+
+@media print {
+	.topbar,
+	.site-footer,
+	.crumbs,
+	.cta,
+	.print-btn,
+	.sheet-note {
+		display: none !important;
+	}
+
+	body {
+		background: #fff;
+	}
+
+	/* "Print the one-page rules" button: only the sheet */
+	body.print-sheet main > :not(#sheet) {
+		display: none !important;
+	}
+
+	body.print-sheet .sheet {
+		margin: 0;
+		break-inside: avoid;
+	}
+}

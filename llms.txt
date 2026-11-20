@@ -14,6 +14,7 @@ What the game offers (and does not):
 ## Pages
 
 - [Play Reversi](https://redreamality.com/reversi/): the game, rules, how to play, tips (corners, edges, X- and C-squares, mobility, fewer discs early) and FAQ
+- [How to Play Reversi](https://redreamality.com/reversi/rules.html): the full rules with diagrams; starting position, Black moves first, legal moves, flips in several directions, no chain flips, passing, early endings with empty squares, ties, and a printable one-page summary
 - [Reversi Strategy](https://redreamality.com/reversi/strategy.html): how to win at Reversi; corners, X- and C-squares, mobility, edges, frontier discs and quiet moves, endgame parity, a beginner opening and how to approach the AI here, each with a board diagram
 - [About](https://redreamality.com/reversi/about.html): about the site and the open-source engine license
 - [Contact](https://redreamality.com/reversi/contact.html)

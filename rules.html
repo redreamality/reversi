@@ -1,0 +1,301 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>How to Play Reversi: Rules Explained With Diagrams</title>
+<meta name="description" content="How to play Reversi: the starting position, who goes first, what makes a legal move, flips in several directions, passing, when the game ends and ties.">
+<meta name="target-keyword" content="how to play reversi">
+<link rel="canonical" href="https://redreamality.com/reversi/rules.html">
+<link rel="icon" href="./favicon.svg" type="image/svg+xml">
+<meta name="theme-color" content="#1d4a37">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Reversi">
+<meta property="og:title" content="How to Play Reversi: Rules Explained With Diagrams">
+<meta property="og:description" content="The complete Reversi rules, including the edge cases: multi-direction flips, no chain reactions, passing, early endings and ties.">
+<meta property="og:url" content="https://redreamality.com/reversi/rules.html">
+<meta property="og:image" content="https://redreamality.com/reversi/img/reversi-midgame.png">
+<link rel="stylesheet" href="./css/site.css">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Article",
+      "@id": "https://redreamality.com/reversi/rules.html#article",
+      "headline": "How to Play Reversi: Rules Explained With Diagrams",
+      "description": "The rules of Reversi: the starting position, who goes first, legal moves, flipping in several directions, why flips don't chain, passing, when the game ends and how ties work, each with a board diagram.",
+      "url": "https://redreamality.com/reversi/rules.html",
+      "mainEntityOfPage": "https://redreamality.com/reversi/rules.html",
+      "image": "https://redreamality.com/reversi/img/reversi-midgame.png",
+      "datePublished": "2026-11-20",
+      "dateModified": "2026-11-20",
+      "inLanguage": "en",
+      "author": {"@type": "Organization", "name": "Reversi", "url": "https://redreamality.com/reversi/"},
+      "publisher": {"@type": "Organization", "name": "Reversi", "url": "https://redreamality.com/reversi/"},
+      "about": {"@id": "https://redreamality.com/reversi/#game"}
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {"@type": "ListItem", "position": 1, "name": "Reversi", "item": "https://redreamality.com/reversi/"},
+        {"@type": "ListItem", "position": 2, "name": "How to Play Reversi", "item": "https://redreamality.com/reversi/rules.html"}
+      ]
+    }
+  ]
+}
+</script>
+<!-- faq-jsonld -->
+<script type="application/ld+json">
+{
+ "@context": "https://schema.org",
+ "@type": "FAQPage",
+ "mainEntity": [
+  {
+   "@type": "Question",
+   "name": "What is the goal of Reversi?",
+   "acceptedAnswer": {
+    "@type": "Answer",
+    "text": "The goal of Reversi is to have more discs of your colour on the board than your opponent when the game ends. Discs change colour all game long, so nothing is safe until the last move; a player who is far behind in the middle of the game can still finish ahead."
+   }
+  },
+  {
+   "@type": "Question",
+   "name": "How is the Reversi board set up?",
+   "acceptedAnswer": {
+    "@type": "Answer",
+    "text": "A game of Reversi starts with four discs on the four centre squares: white on d4 and e5, black on d5 and e4, so that each colour sits on a diagonal. The other 60 squares are empty, and every game on this site starts from exactly this position."
+   }
+  },
+  {
+   "@type": "Question",
+   "name": "Who goes first in Reversi?",
+   "acceptedAnswer": {
+    "@type": "Answer",
+    "text": "Black always goes first in Reversi, and from then on the players take turns. When you play against the computer here, you are Black, so you make the first move and the AI answers as White."
+   }
+  },
+  {
+   "@type": "Question",
+   "name": "What counts as a legal move in Reversi?",
+   "acceptedAnswer": {
+    "@type": "Answer",
+    "text": "A legal move in Reversi is a disc placed on an empty square so that at least one straight line of your opponent's discs lies between it and another disc of yours, with no gaps. The line can run across, up and down, or diagonally. Being next to an opponent's disc is not enough: if the new disc doesn't trap anything, you can't play there."
+   }
+  },
+  {
+   "@type": "Question",
+   "name": "Can one move flip discs in several directions?",
+   "acceptedAnswer": {
+    "@type": "Answer",
+    "text": "Yes. A single move flips every line it traps, in any of the eight directions, so one disc can capture across, down and diagonally in the same turn. You don't choose which lines to flip; every trapped line flips."
+   }
+  },
+  {
+   "@type": "Question",
+   "name": "Do flipped discs flip other discs in a chain?",
+   "acceptedAnswer": {
+    "@type": "Answer",
+    "text": "No. Only the lines trapped by the disc you just placed flip; the discs that turn over do not trap anything new in that same move. A newly flipped disc can still help you on later turns, but it never sets off a chain reaction."
+   }
+  },
+  {
+   "@type": "Question",
+   "name": "What happens if you have no legal move?",
+   "acceptedAnswer": {
+    "@type": "Answer",
+    "text": "If you have no legal move, you pass and your opponent moves again. Passing is only allowed when no square on the board would trap anything for you; as soon as you have a legal move again, you must play. A player can have to pass several turns in a row, and it usually happens late in the game."
+   }
+  },
+  {
+   "@type": "Question",
+   "name": "When does a game of Reversi end? Can it end with empty squares?",
+   "acceptedAnswer": {
+    "@type": "Answer",
+    "text": "A game of Reversi ends when neither player has a legal move. That is usually because the board is full, but it can happen with empty squares left, when no disc placed on any of them would trap anything for either side. A game can also end early if one player loses all their discs, because then neither side can trap anything."
+   }
+  },
+  {
+   "@type": "Question",
+   "name": "How is the winner decided, and what about a tie?",
+   "acceptedAnswer": {
+    "@type": "Answer",
+    "text": "The winner is the player with more discs of their colour on the board when the game ends. If both players have the same number, the game is a draw. Only discs count: there are no points for corners, edges or the number of flips."
+   }
+  }
+ ]
+}
+</script>
+<!-- /faq-jsonld -->
+<!-- analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-4WM6C44V4Z"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag("js",new Date());gtag("config","G-4WM6C44V4Z");window.trackEvent=function(n){gtag("event",n,{site:"reversi"})};</script>
+<!-- /analytics -->
+</head>
+<body>
+<header class="topbar">
+  <div class="topbar-inner">
+    <a class="brand" href="./" aria-label="Reversi home">
+      <svg viewBox="0 0 32 32" aria-hidden="true"><rect width="32" height="32" rx="7" fill="#1d4a37"/><circle cx="16" cy="16" r="10" fill="#1b1b1a"/><path d="M16 6a10 10 0 0 1 0 20z" fill="#f6f3ea"/></svg>
+      Reversi
+    </a>
+    <nav class="topnav" aria-label="Main">
+      <a href="./">Play Reversi</a>
+      <a href="./rules.html" aria-current="page">Rules</a>
+      <a href="./strategy.html">Strategy</a>
+    </nav>
+  </div>
+</header>
+<main class="page article">
+<nav class="crumbs" aria-label="Breadcrumb"><a href="./">Reversi</a> <span aria-hidden="true">›</span> How to Play Reversi</nav>
+<h1>How to Play Reversi: Rules Explained With Diagrams</h1>
+<p class="lead">Learning how to play Reversi takes about five minutes: two players take turns placing discs on an 8×8 board, Black moves first, and every disc you place must trap at least one of your opponent's discs in a straight line so that they flip to your colour. If you have no move, you pass. When neither player can move, the player with more discs wins.</p>
+<p>That is the whole game. The rest of this page goes through each rule in the order you meet it, with a board diagram for each, and spends extra time on the cases most rule sheets skip: one move flipping several lines, flips that don't set off more flips, passing, and a game that ends with empty squares still on the board.</p>
+<p>The diagrams use the same names as our board: columns <strong>a</strong> to <strong>h</strong> from left to right, rows <strong>1</strong> to <strong>8</strong> from top to bottom. Every position comes from a real sequence of legal moves from the starting position, checked against the game engine this site runs. A gold ring marks a legal move, a red ring marks a square or disc to look at closely, and gold shading marks discs that just flipped.</p>
+
+<section aria-labelledby="steps">
+<h2 id="steps">How to play Reversi in six steps</h2>
+<ol class="principles">
+  <li>Start with two black and two white discs placed diagonally in the four centre squares.</li>
+  <li>Black moves first; after that the players alternate.</li>
+  <li>On your turn, place one disc so that it traps one or more of your opponent's discs in a straight line (across, down or diagonally) between the new disc and one of yours.</li>
+  <li>Flip every trapped disc in every direction to your colour.</li>
+  <li>If you can't trap anything anywhere, you pass and your opponent moves again.</li>
+  <li>When neither player can move, count the discs. More discs wins; equal counts are a draw.</li>
+</ol>
+</section>
+
+<section aria-labelledby="q-goal">
+<h2 id="q-goal">What is the goal of Reversi?</h2>
+<p>The goal of Reversi is to have more discs of your colour on the board than your opponent when the game ends. Discs change colour all game long, so nothing is safe until the last move; a player who is far behind in the middle of the game can still finish ahead.</p>
+<p>A full board holds 64 discs, which means a score such as 35–29 is a win, 33–31 is a narrow win and 32–32 is a draw. Games don't always fill the board, though, as you will see further down.</p>
+</section>
+
+<section aria-labelledby="q-setup">
+<h2 id="q-setup">How is the Reversi board set up?</h2>
+<p>A game of Reversi starts with four discs on the four centre squares: white on d4 and e5, black on d5 and e4, so that each colour sits on a diagonal. The other 60 squares are empty, and every game on this site starts from exactly this position.</p>
+<figure class="shot diagram narrow">
+  <img src="img/rules/setup.svg" width="350" height="350" loading="lazy" alt="The Reversi starting position: white discs on d4 and e5, black discs on d5 and e4. The four squares d3, c4, f5 and e6 are ringed in gold.">
+  <figcaption>The starting position. Black's four legal first moves are ringed: d3, c4, f5 and e6.</figcaption>
+</figure>
+<p>In the original 19th-century game, players filled the four centre squares themselves, one disc per turn, so the opening layout could vary. The diagonal start shown here is the one used almost everywhere today, and it is the only one our board uses.</p>
+</section>
+
+<section aria-labelledby="q-first">
+<h2 id="q-first">Who goes first in Reversi?</h2>
+<p>Black always goes first in Reversi, and from then on the players take turns. When you play against the computer here, you are Black, so you make the first move and the AI answers as White.</p>
+<p>In the <em>2 players</em> mode, the person playing Black starts and then hands the device to the person playing White. Because the four possible first moves are mirror images of each other, Black's first choice doesn't matter much; the game starts to take shape with White's reply.</p>
+</section>
+
+<section aria-labelledby="q-legal">
+<h2 id="q-legal">What counts as a legal move in Reversi?</h2>
+<p>A legal move in Reversi is a disc placed on an empty square so that at least one straight line of your opponent's discs lies between it and another disc of yours, with no gaps. The line can run across, up and down, or diagonally. Being next to an opponent's disc is not enough: if the new disc doesn't trap anything, you can't play there.</p>
+<figure class="shot diagram">
+  <picture><source media="(max-width: 640px)" srcset="img/rules/legal-move-stacked.svg" width="350" height="748"><img src="img/rules/legal-move.svg" width="716" height="366" loading="lazy" alt="Two Reversi boards. First: Black to move; c3 is ringed in gold and e3 is ringed in red. Second: after Black plays c3, the white discs on d4, e5 and f6 have turned black and are shaded gold."></picture>
+  <figcaption>Black plays c3. The white discs on d4, e5 and f6 sit in an unbroken diagonal line between c3 and the black disc on g7, so all three flip. Square e3 (red) touches the white disc on d4 but traps nothing, so Black can't play there.</figcaption>
+</figure>
+<p>Three details trip up new players. The trapped line must be all your opponent's discs, with no empty square in between. You can only place a disc, never move one that is already on the board. And you can't skip a turn on purpose: if you have at least one legal move, you must play one. On this site the board only lets you tap legal squares, and the faint dots show where they are until you turn them off under <em>Options</em>.</p>
+</section>
+
+<section aria-labelledby="q-multi">
+<h2 id="q-multi">Can one move flip discs in several directions?</h2>
+<p>Yes. A single move flips every line it traps, in any of the eight directions, so one disc can capture across, down and diagonally in the same turn. You don't choose which lines to flip; every trapped line flips.</p>
+<figure class="shot diagram">
+  <picture><source media="(max-width: 640px)" srcset="img/rules/multi-stacked.svg" width="350" height="748"><img src="img/rules/multi.svg" width="716" height="366" loading="lazy" alt="Two Reversi boards. First: Black to move with e3 ringed in gold. Second: after Black plays e3, five discs have turned black and are shaded gold: d4, f4, e4, e5 and e6."></picture>
+  <figcaption>Black plays e3 and traps three lines at once: d4 on the diagonal towards c5, e4, e5 and e6 straight down towards e7, and f4 on the diagonal towards g5. All five discs flip.</figcaption>
+</figure>
+<p>The one thing each line needs is its own black disc at the far end. A direction where the white discs run into an empty square or off the edge of the board flips nothing, even if other directions from the same move do flip.</p>
+</section>
+
+<section aria-labelledby="q-chain">
+<h2 id="q-chain">Do flipped discs flip other discs in a chain?</h2>
+<p>No. Only the lines trapped by the disc you just placed flip; the discs that turn over do not trap anything new in that same move. A newly flipped disc can still help you on later turns, but it never sets off a chain reaction.</p>
+<figure class="shot diagram">
+  <picture><source media="(max-width: 640px)" srcset="img/rules/no-chain-stacked.svg" width="350" height="748"><img src="img/rules/no-chain.svg" width="716" height="366" loading="lazy" alt="Two Reversi boards. First: Black to move with c2 ringed in gold. Second: after Black plays c2 only the disc on d3 has turned black; the white disc on d4 below it, now between black discs on d3 and d5, is ringed in red and is still white."></picture>
+  <figcaption>Black plays c2 and flips d3, trapped on the diagonal towards e4. Afterwards the white disc on d4 sits between black discs on d3 and d5, but it stays white: it was not trapped by the disc that was placed.</figcaption>
+</figure>
+<p>This is the rule most often misplayed in home games with a physical set. If you play by hand, flip the lines from the disc you placed and stop there.</p>
+</section>
+
+<section aria-labelledby="q-pass">
+<h2 id="q-pass">What happens if you have no legal move?</h2>
+<p>If you have no legal move, you pass and your opponent moves again. Passing is only allowed when no square on the board would trap anything for you; as soon as you have a legal move again, you must play. A player can have to pass several turns in a row, and it usually happens late in the game.</p>
+<figure class="shot diagram narrow">
+  <img src="img/rules/pass.svg" width="350" height="350" loading="lazy" alt="A late Reversi position with White to move. Nine empty squares are shaded red and each one is also ringed in gold: a1, a5, a6, g3, b8, c8, e8, g8 and h8.">
+  <figcaption>White to move, with nine empty squares left (shaded). None of them would trap a black disc, so White must pass. Black then has a legal move on all nine (gold rings).</figcaption>
+</figure>
+<p>On this board you never have to press a pass button. When the player to move has no legal move, a short message says so and the turn goes to the other side by itself. If you play against the AI, this is how you get several moves in a row when White is stuck.</p>
+<p>Our <em>Options</em> menu also offers a stricter house rule: under <em>When a player has no legal move</em>, choose <em>the game ends</em>, and the game stops and is scored the moment either player has no legal move, instead of passing. The default is <em>they must pass</em>, which is the standard rule.</p>
+</section>
+
+<section aria-labelledby="q-end">
+<h2 id="q-end">When does a game of Reversi end? Can it end with empty squares?</h2>
+<p>A game of Reversi ends when neither player has a legal move. That is usually because the board is full, but it can happen with empty squares left, when no disc placed on any of them would trap anything for either side. A game can also end early if one player loses all their discs, because then neither side can trap anything.</p>
+<figure class="shot diagram narrow">
+  <img src="img/rules/early-end.svg" width="350" height="350" loading="lazy" alt="A finished Reversi game with two empty squares, g8 and h8, shaded red in the bottom-right corner. Black has 29 discs and White has 33.">
+  <figcaption>Black to move with g8 and h8 still empty. Neither square traps anything for Black or for White, so the game is over: White wins 33–29 and the two empty squares count for nobody.</figcaption>
+</figure>
+<p>On this site, a position like this one shows Black's pass for a moment and then the final score. With the stricter option <em>the game ends</em> turned on, the game stops as soon as the player to move has no legal move, even if the other player could still move.</p>
+</section>
+
+<section aria-labelledby="q-winner">
+<h2 id="q-winner">How is the winner decided, and what about a tie?</h2>
+<p>The winner is the player with more discs of their colour on the board when the game ends. If both players have the same number, the game is a draw. Only discs count: there are no points for corners, edges or the number of flips.</p>
+<figure class="shot diagram narrow">
+  <img src="img/rules/draw.svg" width="350" height="350" loading="lazy" alt="A full Reversi board at the end of a game with 32 black discs and 32 white discs.">
+  <figcaption>A drawn game: the board is full, with 32 black and 32 white discs.</figcaption>
+</figure>
+<p>The score under our board updates after every move and shows the result when the game is over. Empty squares left at the end are not given to either player here. Some tournament rules add them to the winner's total; the winner is the same either way, only the margin changes.</p>
+</section>
+
+<section class="sheet" id="sheet" aria-labelledby="sheet-title">
+<h2 id="sheet-title">How to play Reversi: the rules on one page</h2>
+<p class="sheet-note">A printable summary for playing with a physical set. The button prints only this box, on a single page.</p>
+<div class="sheet-body">
+  <img class="sheet-board" src="img/rules/setup.svg" width="350" height="350" loading="lazy" alt="Reversi starting position for the printable rules: white on d4 and e5, black on d5 and e4, with Black's four first moves ringed.">
+  <ol>
+    <li><strong>Set-up:</strong> white on d4 and e5, black on d5 and e4. Black moves first.</li>
+    <li><strong>Move:</strong> place one disc so it traps at least one straight line of your opponent's discs (across, down or diagonal) against a disc of yours. No gaps.</li>
+    <li><strong>Flip:</strong> every trapped line, in every direction, flips to your colour. Flipped discs don't flip anything further.</li>
+    <li><strong>No move:</strong> pass, and your opponent plays again. You may not pass if you have a legal move.</li>
+    <li><strong>End:</strong> when neither player can move, even if squares are still empty.</li>
+    <li><strong>Score:</strong> more discs wins. Equal counts are a draw.</li>
+  </ol>
+</div>
+<p class="sheet-url">Play online: redreamality.com/reversi/</p>
+<p><button type="button" class="btn-cta print-btn" id="print-sheet">Print the one-page rules</button></p>
+</section>
+
+<section aria-labelledby="next">
+<h2 id="next">Once you know the rules</h2>
+<p>Knowing how to play Reversi and knowing how to win are two different things. The rules reward flipping, but good play often means flipping less, staying off the squares next to empty corners and keeping more moves than your opponent. Our <a href="./strategy.html">Reversi strategy guide</a> covers those ideas with the same kind of diagrams.</p>
+</section>
+
+<section class="cta" aria-labelledby="play-now">
+<h2 id="play-now">Play a game of Reversi now</h2>
+<p>The quickest way to learn how to play Reversi is to play a game. The board only lets you tap legal moves and shows each one with a dot, so you can't break a rule by accident. You play Black against the computer, or pick <em>2 players</em> to play a friend on the same screen.</p>
+<p><a class="btn-cta" href="./">Play Reversi against the AI</a></p>
+</section>
+</main>
+<footer class="site-footer">
+  <div class="inner">
+    <a class="brand" href="./">Reversi</a>
+    <nav aria-label="Site">
+      <a href="./about.html">About</a>
+      <a href="./contact.html">Contact</a>
+      <a href="./privacy.html">Privacy Policy</a>
+      <a href="./terms.html">Terms of Service</a>
+      <a href="./dmca.html">Copyright / DMCA</a>
+    </nav>
+    <p class="fine">© 2026 Reversi. Game engine: UCThello by Oliver Merkel, MIT License (<a href="./licenses/UCThello-LICENSE.txt">license</a>).</p>
+  </div>
+</footer>
+<script>
+document.getElementById("print-sheet").addEventListener("click", function () {
+  document.body.classList.add("print-sheet");
+  window.addEventListener("afterprint", function () { document.body.classList.remove("print-sheet"); }, { once: true });
+  window.print();
+});
+</script>
+</body>
+</html>

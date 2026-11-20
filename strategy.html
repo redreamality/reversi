@@ -29,7 +29,7 @@
       "mainEntityOfPage": "https://redreamality.com/reversi/strategy.html",
       "image": "https://redreamality.com/reversi/img/reversi-midgame.png",
       "datePublished": "2026-11-19",
-      "dateModified": "2026-11-19",
+      "dateModified": "2026-11-20",
       "inLanguage": "en",
       "author": {"@type": "Organization", "name": "Reversi", "url": "https://redreamality.com/reversi/"},
       "publisher": {"@type": "Organization", "name": "Reversi", "url": "https://redreamality.com/reversi/"},
@@ -141,6 +141,7 @@
     </a>
     <nav class="topnav" aria-label="Main">
       <a href="./">Play Reversi</a>
+      <a href="./rules.html">Rules</a>
       <a href="./strategy.html" aria-current="page">Strategy</a>
     </nav>
   </div>
@@ -149,6 +150,7 @@
 <nav class="crumbs" aria-label="Breadcrumb"><a href="./">Reversi</a> <span aria-hidden="true">›</span> Strategy</nav>
 <h1>Reversi Strategy: How to Win at Reversi</h1>
 <p class="lead">The core Reversi strategy fits in one sentence: take the corners, don't play next to an empty corner, and flip few discs early so that you keep more legal moves than your opponent. Disc count only matters at the very end. Below, each idea gets its own short section and a board diagram, in roughly the order you will need them during a game.</p>
+<p>New to the game? Start with <a href="./rules.html">how to play Reversi</a>: the rules, with diagrams for legal moves, passing and how a game ends.</p>
 <p>The diagrams use the same names as our board: columns <strong>a</strong> to <strong>h</strong> from left to right, rows <strong>1</strong> to <strong>8</strong> from top to bottom. Every position shown comes from a real sequence of legal moves from the normal starting position, so you could reach it in a game. A gold ring marks a good move, a red ring marks a risky or bad one.</p>
 
 <section aria-labelledby="q-win">
@@ -169,7 +171,7 @@
 <h2 id="q-corners">Why are corners so important?</h2>
 <p>A disc in a corner can never be flipped, because there is no square beyond it from which to trap it. That makes corners the safest squares on the board, and they spread their safety: an unbroken line of your discs running along the edge from your corner can never be flipped either. Discs that can no longer be flipped are called <em>stable discs</em>, and the endgame is largely a race to collect them.</p>
 <figure class="shot diagram">
-  <img src="img/strategy/corner.svg" width="716" height="366" loading="lazy" alt="Two Reversi boards. Left: Black to move, with the h8 corner empty and white discs on c8 to g8 next to a black disc on b8; h8 is ringed in gold. Right: after Black plays h8 the whole bottom row from b8 to h8 is black, shaded to show that those seven discs are stable.">
+  <picture><source media="(max-width: 640px)" srcset="img/strategy/corner-stacked.svg" width="350" height="748"><img src="img/strategy/corner.svg" width="716" height="366" loading="lazy" alt="Two Reversi boards. First: Black to move, with the h8 corner empty and white discs on c8 to g8 next to a black disc on b8; h8 is ringed in gold. Second: after Black plays h8 the whole bottom row from b8 to h8 is black, shaded to show that those seven discs are stable."></picture>
   <figcaption>Black plays the h8 corner and flips five white discs along the bottom edge. The seven black discs from b8 to h8 now run unbroken from the corner, so none of them can ever be flipped again.</figcaption>
 </figure>
 <p>Corners rarely come free. You usually get one because your opponent was forced to play next to it, which is what the next section is about. When you do take a corner, build out from it along the edges; each disc you add that touches your stable group is one your opponent can no longer win back.</p>
@@ -184,7 +186,7 @@
 </figure>
 <p>An X-square is usually the worse of the two. A disc there sits on the long diagonal, so any of your opponent's discs further along that diagonal can trap it from the corner. In the position below White has just played b7, and Black can answer at once in the a8 corner.</p>
 <figure class="shot diagram">
-  <img src="img/strategy/x-square.svg" width="716" height="366" loading="lazy" alt="Two Reversi boards. Left: White has just placed a disc on the X-square b7, ringed in red, and the a8 corner beside it is empty and ringed in gold. Right: Black has played a8 and the white disc on b7 has turned black.">
+  <picture><source media="(max-width: 640px)" srcset="img/strategy/x-square-stacked.svg" width="350" height="748"><img src="img/strategy/x-square.svg" width="716" height="366" loading="lazy" alt="Two Reversi boards. First: White has just placed a disc on the X-square b7, ringed in red, and the a8 corner beside it is empty and ringed in gold. Second: Black has played a8 and the white disc on b7 has turned black."></picture>
   <figcaption>White's move to the X-square b7 lets Black take the a8 corner straight away, flipping three discs, including the one on b7.</figcaption>
 </figure>
 <p>C-squares are less dangerous but follow the same logic along the edge; there is an example in the section on edges. Late in the game, once a corner is already taken, its X- and C-squares lose their risk and can be perfectly good moves.</p>
@@ -204,7 +206,7 @@
 <h2 id="q-edges">Are edges good or bad?</h2>
 <p>Edges are neither good nor bad on their own. An edge disc can only be flipped along the edge, which makes it harder to attack than a disc in the middle, but edge moves also use up safe moves and can open a path to a corner. The question to ask before every edge move is what it allows your opponent to do next.</p>
 <figure class="shot diagram">
-  <img src="img/strategy/edge.svg" width="716" height="366" loading="lazy" alt="Two Reversi boards. Left: Black has just played the C-square h2, ringed in red, with the h1 corner above it empty and ringed in gold. Right: White has taken h1 and the black disc on h2 has turned white.">
+  <picture><source media="(max-width: 640px)" srcset="img/strategy/edge-stacked.svg" width="350" height="748"><img src="img/strategy/edge.svg" width="716" height="366" loading="lazy" alt="Two Reversi boards. First: Black has just played the C-square h2, ringed in red, with the h1 corner above it empty and ringed in gold. Second: White has taken h1 and the black disc on h2 has turned white."></picture>
   <figcaption>Black's edge move to the C-square h2 leaves White a legal move in the empty h1 corner. White takes it and flips three discs, h2 among them.</figcaption>
 </figure>
 <p>Edges become strong when they cannot be attacked: a full edge, or an edge built out from your own corner. They become weak when they leave a single empty square that your opponent can fill to bracket your discs, or when they sit next to an empty corner as in the example. If you are unsure, a quiet move in the middle is usually the safer choice. Good Reversi strategy treats an edge as something to build, not something to grab.</p>
